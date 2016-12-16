@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/script.js"></script>
+    <body>
+  </head>
+    <div class="wrapper" id="wrapper">
+
+    </div>
+    <script type="text/html" id="test-form">
+      <h1><%= testTitle%></h1>
+      <form action="#">
+        <%for (var i=0; i<questions.length; i++) {%>
+        <h2><%=(i+1) + '. ' + questions[i].title%></h2>
+        <ul>
+            <%for (var n=0; n<questions[i].answers.length; n++){%>
+            <li>
+              <input type="checkbox" id="<%= 'answer_' + (i+1) + '-' + (n+1)%>"
+              <%for(var g=0; g<questions[i].correctAnswer.length; g++) {%>
+                <% if(questions[i].answers[n] === questions[i].correctAnswer[g]) {%>
+                  class="correct-answer"
+                <%}%>
+                <%}%>
+                >
+              <label for="<%= 'answer_' + (i+1) + '-' + (n+1)%>"><%= questions[i].answers[n]%></label>
+            </li>
+            <%}%>
+          </ul>
+          <%}%>
+        <input type="submit" value="Проверить ответы">
+      </form>
+    </script>
+  </body>
+</html>

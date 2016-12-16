@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: arial, helvetica, sans-serif;
+}
+
+.wrapper {
+    width: 600px;
+    margin: auto;
+    padding: 10px 20px 30px;
+    background: #c5edb4;
+}
+
+h1 {
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+
+li {
+    padding: 1px 0 1px 25px;
+    list-style: none;
+}
+
+h2 {
+    padding: 5px;
+    font-size: 18px;
+}
+
+h2 span {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+label {
+    display: inline-block;
+    font-size: 15px;
+}
+
+[type=checkbox] {
+    display: none;
+}
+
+[type=checkbox] + label::before {
+    display: inline-block;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    background: url('../img/green.png');
+    content: '';
+    vertical-align: middle;
+}
+
+[type=checkbox] + label:hover::before {
+    background-position: -24px 0;
+}
+
+[type=checkbox]:checked + label::before {
+    background-position: -48px 0;
+}
+
+[type=checkbox]:disabled + label::before {
+    background-position: -72px 0;
+}
+
+[type=checkbox]:checked:disabled + label::before {
+    background-position: -96px 0;
+}
+
+[type=submit] {
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin: 10px auto 0;
+    border: 3px double #000;
+    border-radius: 3px;
+    outline: 0;
+    background: #a1c691;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, .5);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 430px;
+    height: 130px;
+    margin: -75px 0 0 -225px;
+    padding: 10px;
+    background-color: #aed89c;
+    font-size: 20px;
+}
